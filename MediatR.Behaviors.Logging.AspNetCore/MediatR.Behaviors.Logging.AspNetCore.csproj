@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Raphael Lorenzeto de Abreu</Authors>
-    <PackageProjectUrl>https://github.com/raphaabreu/MediatR.Behaviours.Logging.AspNetCore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/raphaabreu/MediatR.Behaviors.Logging.AspNetCore</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Copyright>Raphael Lorenzeto de Abreu</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Simple MediatR pipeline behaviour that creates a Microsoft.Extensions.Logging.ILogger scope logging start, finish and failure events including ellapsed time.</Description>
-    <RepositoryUrl>https://github.com/raphaabreu/MediatR.Behaviours.Logging.AspNetCore</RepositoryUrl>
+    <Description>Simple MediatR pipeline behavior that creates a Microsoft.Extensions.Logging.ILogger scope logging start, finish and failure events including ellapsed time.</Description>
+    <RepositoryUrl>https://github.com/raphaabreu/MediatR.Behaviors.Logging.AspNetCore</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageTags>mediator logging aspnetcore behaviours ilogger</PackageTags>
+    <PackageTags>mediator logging aspnetcore behaviors ilogger</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

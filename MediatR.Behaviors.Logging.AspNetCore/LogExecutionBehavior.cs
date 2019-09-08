@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace MediatR.Behaviours.Logging.AspNetCore
+namespace MediatR.Behaviors.Logging.AspNetCore
 {
-    public class LogExecutionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class LogExecutionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly ILogger<TRequest> _logger;
 
-        public LogExecutionBehaviour(ILogger<TRequest> logger)
+        public LogExecutionBehavior(ILogger<TRequest> logger)
         {
             _logger = logger;
         }
