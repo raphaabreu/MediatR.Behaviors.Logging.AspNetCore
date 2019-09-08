@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Raphael Lorenzeto de Abreu</Authors>
+    <PackageProjectUrl>https://github.com/raphaabreu/MediatR.Behaviours.Logging.AspNetCore</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>Raphael Lorenzeto de Abreu</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Simple MediatR pipeline behaviour that creates a Microsoft.Extensions.Logging.ILogger scope logging start, finish and failure events including ellapsed time.</Description>
+    <RepositoryUrl>https://github.com/raphaabreu/MediatR.Behaviours.Logging.AspNetCore</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>mediator logging aspnetcore behaviours ilogger</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
