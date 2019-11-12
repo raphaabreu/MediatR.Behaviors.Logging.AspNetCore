@@ -24,18 +24,18 @@ namespace MediatR.Behaviors.Logging.AspNetCore
             {
                 try
                 {
-                    _logger.LogDebug("Handler for {MeditatorRequestName} starting", typeof(TRequest).Name, data);
+                    _logger.LogDebug("Handler for {MeditatorRequestName} starting", typeof(TRequest).Name);
                     timer.Start();
                     var result = await next();
                     timer.Stop();
-                    _logger.LogDebug("Handler for {MeditatorRequestName} finished in {ElapsedMilliseconds}ms", typeof(TRequest).Name, data, timer.Elapsed.TotalMilliseconds);
+                    _logger.LogDebug("Handler for {MeditatorRequestName} finished in {ElapsedMilliseconds}ms", typeof(TRequest).Name, timer.Elapsed.TotalMilliseconds);
 
                     return result;
                 }
                 catch (Exception e)
                 {
                     timer.Stop();
-                    _logger.LogError(e, "Handler for {MeditatorRequestName} failed in {ElapsedMilliseconds}ms", typeof(TRequest).Name, data, timer.Elapsed.TotalMilliseconds);
+                    _logger.LogError(e, "Handler for {MeditatorRequestName} failed in {ElapsedMilliseconds}ms", typeof(TRequest).Name, timer.Elapsed.TotalMilliseconds);
                     throw;
                 }
             }
