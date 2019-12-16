@@ -9,17 +9,19 @@ namespace MediatR.Behaviors.Logging.AspNetCore
     public class LogExecutionBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly ILogger<TRequest> _logger;
+        private readonly JsonSerializerSettings _jsonSerializerSettings;
 
-        public LogExecutionBehavior(ILogger<TRequest> logger)
+        public LogExecutionBehavior(ILogger<TRequest> logger, JsonSerializerSettings jsonSerializerSettings = null)
         {
             _logger = logger;
+            _jsonSerializerSettings = jsonSerializerSettings ?? new JsonSerializerSettings();
         }
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var correlationId = Guid.NewGuid();
             var timer = new System.Diagnostics.Stopwatch();
-            var data = JsonConvert.SerializeObject(request);
+            var data = JsonConvert.SerializeObject(request, _jsonSerializerSettings);
             using (var loggingScope = _logger.BeginScope("{MeditatorRequestName} with {MeditatorRequestData}, correlation id {CorrelationId}", typeof(TRequest).Name, data, correlationId))
             {
                 try
